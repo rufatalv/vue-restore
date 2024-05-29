@@ -1,5 +1,6 @@
 import { connect } from "mongoose";
 
+
 function connectAndRun(app, port) {
   connect(process.env.MONGO_URI).then(() => {
     console.log("db ok");

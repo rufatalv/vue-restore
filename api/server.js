@@ -11,5 +11,4 @@ app.use(json());
 
 app.use("/api/products", productsRouter);
 app.use("/auth", authRouter);
-
 connectAndRun(app, 3002);

@@ -14,10 +14,12 @@
     "@steveyuowo/vue-hot-toast": "^1.2.5",
     "@vueuse/motion": "^2.1.0",
     "axios": "^1.7.2",
+    "jwt-decode": "^4.0.0",
     "pinia": "^2.1.7",
     "primeicons": "^7.0.0",
     "primevue": "^4.0.0-beta.3",
     "vue": "^3.4.21",
+    "vue-cookies": "^1.8.4",
     "vue-router": "^4.3.2"
   },
   "devDependencies": {

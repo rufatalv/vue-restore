@@ -5,19 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79b0f637-49de-47e0-b20d-abd711930002" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/UILoader.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/middleware/checkRole.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/utils/cloudinary.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/utils/multerConfig.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/views/AddProductView.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/views/CheckoutView.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/views/NotFound.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/views/RegisterView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/auth.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/middleware/verifyUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/middleware/verifyUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/product.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/product.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/product.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/product.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/user.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/user.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.env" beforeDir="false" afterPath="$PROJECT_DIR$/client/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.env.development" beforeDir="false" afterPath="$PROJECT_DIR$/client/.env.development" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/product.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/product.router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/utils/connect.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/utils/connect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/UICard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/UICard.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/UICart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/UICart.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/UINavbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/UINavbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/HomeView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/LoginView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/LoginView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-cookies/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-cookies/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-cookies/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-cookies/sample/welcome-v2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-cookies/sample/welcome-v3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-cookies/types/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-cookies/types/vue.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vue-cookies/vue-cookies.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,28 +85,31 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Dev/vue/vue-r/src/views&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.HTML&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.1.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Dev/vue/vue-r/client/src/views",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.general",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.1.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;vue.recent.templates&quot;: [
-      &quot;Vue Composition API Component&quot;
+  "keyToStringList": {
+    "vue.recent.templates": [
+      "Vue Composition API Component"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Dev\vue\vue-r\client\src\views" />
       <recent name="C:\Dev\vue\vue-r\src\views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -110,7 +139,8 @@
       <workItem from="1716933307400" duration="7628000" />
       <workItem from="1716970453450" duration="35000" />
       <workItem from="1716970498970" duration="2039000" />
-      <workItem from="1717002862570" duration="3374000" />
+      <workItem from="1717002862570" duration="3994000" />
+      <workItem from="1717011179396" duration="12104000" />
     </task>
     <servers />
   </component>
@@ -126,7 +156,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/client/src/views/HomeView.vue</url>
           <line>31</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

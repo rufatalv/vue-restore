@@ -4,6 +4,7 @@ import "@steveyuowo/vue-hot-toast/vue-hot-toast.css";
 import UINavbar from '@/components/UINavbar.vue'
 import UICart from '@/components/UICart.vue'
 
+
 </script>
 
 <template>

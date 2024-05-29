@@ -8,7 +8,20 @@ const productSchema = new Schema({
   },
   author: String,
   body: String,
-  description: String,
+  description: {
+    type: String,
+    required: true,
+  },
+  image: {
+    type: String,
+    required: true,
+  },
+  category: String,
+  price: Number,
+  rating: {
+    rate: Number,
+    count: Number,
+  },
   comments: [
     {
       body: String,
@@ -25,16 +38,6 @@ const productSchema = new Schema({
   hidden: {
     type: Boolean,
     default: false,
-  },
-  meta: {
-    votes: {
-      type: Number,
-      default: 0,
-    },
-    favs: {
-      type: Number,
-      default: 0,
-    },
   },
 });
 

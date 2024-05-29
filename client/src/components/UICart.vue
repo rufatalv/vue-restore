@@ -58,7 +58,9 @@
         </VDataView>
         <div class="flex justify-between items-center mt-auto ml-4">
           <p class="font-bold text-xl">Total: ${{ cart.total.toFixed(2) }}</p>
-          <VButton label="Checkout"/>
+          <router-link to="/checkout">
+            <VButton label="Checkout"/>
+          </router-link>
         </div>
       </div>
 
@@ -72,12 +74,12 @@ import {useCart} from "@/store/store.js";
 const cart = useCart()
 
 const incrementCount = (item) => {
-  cart.addToCart(item, 1); // Increase count by 1
+  cart.addToCart(item, 1);
 };
 
 const decrementCount = (item) => {
   if (item.count > 1) {
-    cart.addToCart(item, -1); // Decrease count by 1 if count is greater than 1
+    cart.addToCart(item, -1);
   }
 };
 </script>

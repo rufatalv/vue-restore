@@ -24,6 +24,7 @@ import {definePreset} from 'primevue/themes';
 import Drawer from "primevue/drawer";
 import DataView from "primevue/dataview";
 import Tag from "primevue/tag";
+import Menu from "primevue/menu";
 
 
 const pinia = createPinia()
@@ -95,6 +96,7 @@ app.component('VInputGroup', InputGroup)
 app.component('VInputGroupAddon', InputGroupAddon)
 app.component('VBadge', Badge)
 app.component('VCard', Card)
+app.component('VMenu', Menu)
 app.component('VButton', Button)
 app.component('VDataView', DataView)
 app.component('VTag', Tag)

@@ -41,7 +41,7 @@ const isLoading = ref(true)
 
 const fetchData = async () => {
 
-  const response = await axios.get('https://fakestoreapi.com/products')
+  const response = await axios.get(import.meta.env.VITE_API_URL + '/api/products')
   items.value = response.data
   isLoading.value = false
 }

@@ -22,6 +22,7 @@ export const registerUser = async (req, res, next) => {
     next(error);
   }
 };
+
 export const loginUser = async (req, res, next) => {
   const { username, password } = req.body;
   const validUser = await User.findOne({ username });
@@ -42,9 +43,8 @@ export const loginUser = async (req, res, next) => {
       .json({
         message: "Login successful",
         status: 200,
-        user: safeData,
-        token,
-      }); 
+        user: {...safeData, token},
+      });
   } else {
     next(errorHandler(res, 401, "Unauthorized"));
   }
