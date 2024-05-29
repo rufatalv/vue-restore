@@ -38,12 +38,12 @@ router.beforeEach((to, from, next) => {
 
     const user = useUser()
 
-    if (to.path.startsWith('/auth/') && user.user) {
+    if (to.path.startsWith('/auth/') && user.user?.token) {
         next('/')
     } else {
         next()
     }
-    if (to.path === '/logout' && user.user) {
+    if (to.path === '/logout' && user.user?.token) {
         next('/')
         user.logout()
     } else {
