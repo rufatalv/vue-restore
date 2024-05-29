@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79b0f637-49de-47e0-b20d-abd711930002" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/client/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/UILoader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/auth.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/middleware/verifyUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/middleware/verifyUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.env" beforeDir="false" afterPath="$PROJECT_DIR$/client/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.env.development" beforeDir="false" afterPath="$PROJECT_DIR$/client/.env.development" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/UICart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/UICart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/UINavbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/UINavbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/HomeView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/LoginView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/LoginView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +109,8 @@
       <workItem from="1716919822503" duration="615000" />
       <workItem from="1716933307400" duration="7628000" />
       <workItem from="1716970453450" duration="35000" />
-      <workItem from="1716970498970" duration="1634000" />
+      <workItem from="1716970498970" duration="2039000" />
+      <workItem from="1717002862570" duration="3374000" />
     </task>
     <servers />
   </component>
@@ -106,5 +119,17 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/src/views/HomeView.vue</url>
+          <line>31</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <VDrawer v-model:visible="cart.visible" :pt="{
-      root: 'lg:w-[35vw] ',
+      root: 'w-9/12 lg:w-[35vw] ',
     }" header="Cart" position="right">
       <div class="flex flex-col h-full">
         <VDataView :value="cart.items">

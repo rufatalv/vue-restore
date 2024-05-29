@@ -34,18 +34,17 @@ export const loginUser = async (req, res, next) => {
   if (validPass) {
     const { password: pass, ...safeData } = validUser._doc;
     // eslint-disable-next-line no-undef
-    const token = jwt.sign({ user: safeData }, process.env.JWT_SECRET);
+    const token = jwt.sign({ user: safeData }, process.env.JWT_SECRET, {expiresIn: '1h'});
 
-    console.log(token);
     return res
-      .cookie("access_token", token, { httpOnly: true })
+      .cookie("access_token", token)
       .status(200)
       .json({
         message: "Login successful",
         status: 200,
         user: safeData,
         token,
-      });
+      }); 
   } else {
     next(errorHandler(res, 401, "Unauthorized"));
   }

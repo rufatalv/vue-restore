@@ -2,11 +2,8 @@ import {defineStore} from 'pinia'
 
 export const useCart = defineStore('cart', {
     state: () => ({
-        items: [],
-        visible: false,
-        total: 0,
-    }),
-    actions: {
+        items: [], visible: false, total: 0,
+    }), actions: {
         addToCart(itemToAdd, count = 1) {
             const existingItem = this.items.find(item => item.id === itemToAdd.id);
             if (existingItem) {
@@ -15,16 +12,13 @@ export const useCart = defineStore('cart', {
                 this.items.push({...itemToAdd, count});
             }
             this.calculateTotal();
-        },
-        toggleCart() {
+        }, toggleCart() {
             this.visible = !this.visible;
-        },
-        calculateTotal() {
+        }, calculateTotal() {
             this.total = this.items.reduce((total, item) => {
                 return total + (item.price * item.count);
             }, 0);
-        },
-        removeItem(id) {
+        }, removeItem(id) {
             this.items = this.items.filter(item => item.id !== id);
             this.calculateTotal();
         }
@@ -41,6 +35,7 @@ export const useUser = defineStore('user', {
     }, actions: {
         persistToLocalStorage() {
             localStorage.setItem('user', JSON.stringify(this.user))
+
         }, setUser(payload) {
             this.user = payload
             this.persistToLocalStorage()
