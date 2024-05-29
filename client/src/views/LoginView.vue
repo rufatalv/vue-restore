@@ -33,7 +33,7 @@ const password = ref(null);
 const store = useUser();
 const handleSubmit = async (e) => {
   e.preventDefault();
-  const res = await axios.post('/auth/sign-in', {
+  const res = await axios.post(import.meta.env.VITE_API_URL + '/auth/sign-in', {
     username: login.value, password: password.value
   });
   console.log(res.data)
