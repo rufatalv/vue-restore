@@ -33,7 +33,7 @@ const password = ref(null);
 const store = useUser();
 const handleSubmit = async (e) => {
   e.preventDefault();
-  const res = await axios.post('http://localhost:3002/auth/sign-in', {
+  const res = await axios.post('/auth/sign-in', {
     username: login.value, password: password.value
   });
   console.log(res.data)
