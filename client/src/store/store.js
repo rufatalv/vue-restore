@@ -58,15 +58,17 @@ export const useUser = defineStore('user', {
     }),
     getters: {
         isLoggedIn() {
-            const {user} = this;
-            if (!user || !user.token) return false;
-
-            if (!this.isTokenValid(user.token)) {
-                this.logout();
-                return false;
-            }
-
-            return true;
+            return this.user && this.isTokenValid(this.user.token);
+            // const {user} = this;
+            // console.log(user)
+            // if (!user || !user.token) return false;
+            //
+            // if (!this.isTokenValid(user.token)) {
+            //     this.logout();
+            //     return false;
+            // }
+            //
+            // return true;
         }
     },
     actions: {

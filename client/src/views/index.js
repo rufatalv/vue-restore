@@ -8,6 +8,8 @@ import {useUser} from "@/store/store.js";
 import NotFound from "@/views/NotFound.vue";
 import CheckoutView from "@/views/CheckoutView.vue";
 import AddProductView from "@/views/AddProductView.vue";
+import UserProfileView from "@/views/UserProfileView.vue";
+import UpdateUserProfileView from "@/views/UpdateUserProfileView.vue";
 
 const routes = [
     {path: '/', component: HomeView},
@@ -15,6 +17,8 @@ const routes = [
     {path: '/contact', component: ProductsView},
     {path: '/auth/login', component: LoginView},
     {path: '/auth/register', component: RegisterView},
+    {path: '/user/profile', component: UserProfileView},
+    {path: '/user/profile/update', component: UpdateUserProfileView},
     {path: '/checkout', component: CheckoutView},
     {path: '/logout', component: LoginView},
     {
@@ -33,7 +37,6 @@ const router = createRouter({
     history: createWebHistory(),
     routes
 })
-
 router.beforeEach((to, from, next) => {
     const user = useUser()
 

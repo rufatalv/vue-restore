@@ -82,7 +82,9 @@ const menu = ref();
 const toggle = (event) => {
   menu.value.toggle(event);
 };
-const username = user.user ? user.user.username : 'Guest';
+
+const username = computed(() => user.user?.username || "Guest");
+
 const menuItems = ref([
   {
     label: 'Profile',
@@ -90,12 +92,12 @@ const menuItems = ref([
       {
         label: username,
         icon: 'pi pi-user',
-        route: '/#'
+        route: '/user/profile'
       },
       {
         label: 'Settings',
         icon: 'pi pi-cog',
-        route: '/#'
+        route: '/user/profile/update'
       },
       {
         label: 'Logout',

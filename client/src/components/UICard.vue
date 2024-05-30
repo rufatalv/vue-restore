@@ -25,12 +25,13 @@
         {{ props.item.description }}
       </p>
     </div>
-    <VButton class="w-full py-4" icon="pi pi-shopping-cart" label="Add to Cart" outlined @click="props.click"></VButton>
+    <VButton class="w-full py-4" icon="pi pi-shopping-cart" :label="props.btnText" outlined @click="props.click"></VButton>
   </div>
 </template>
 
 <script setup>
 const props = defineProps({
+  btnText: String,
   item: Object,
   click: Function,
   clickHeart: Function

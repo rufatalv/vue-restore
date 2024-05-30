@@ -1,6 +1,7 @@
 import Product from "../models/product.model.js";
 import cloudinary from "../utils/cloudinary.js";
 import jwt from "jsonwebtoken";
+import User from "../models/user.model.js";
 
 export const getAllProducts = async (req, res, next) => {
     try {
@@ -81,7 +82,35 @@ export const addProduct = async (req, res, next) => {
 };
 export const addProductToLikes = async (req, res, next) => {
     try {
-        // empty
+        const token = req.headers.authorization.split(' ')[1];
+        const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
+
+        const email = decodedToken.user.email;
+
+        const user = await User.findOne({ email });
+
+        if (!user) {
+            return res.status(404).json({ message: 'User not found.' });
+        }
+
+        const { productId } = req.body;
+
+        const product = await Product.findById(productId);
+
+        if (!product) {
+            return res.status(404).json({ message: 'Product not found.' });
+        }
+
+        if (user.likedProducts.includes(productId)) {
+            return res.status(400).json({ message: 'Product already liked.' });
+        }
+
+        user.likedProducts.push(productId);
+        await user.save();
+
+        await user.populate('likedProducts')
+
+        res.status(200).json({ message: 'Product added to likes successfully.', likedProducts: user.likedProducts });
     } catch (error) {
         next(error);
     }

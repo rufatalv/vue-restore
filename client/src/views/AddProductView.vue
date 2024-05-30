@@ -1,15 +1,18 @@
 <script setup>
 import {ref} from 'vue'
-
+import { useToast } from "primevue/usetoast";
+const toast = useToast();
 const title = ref('')
 const price = ref(0)
 const description = ref('')
 const image = ref(null)
+const body = ref('')
 
-const onFileChange = (e) => {
-  const file = e.target.files[0]
-  image.value = file
-}
+const fileupload = ref();
+
+const upload = () => {
+  fileupload.value.upload();
+};
 
 const onSubmit = () => {
   const formData = new FormData()
@@ -33,12 +36,13 @@ const onSubmit = () => {
           <div class="flex flex-col gap-2">
             <label for="title">Title</label>
             <VInputText id="title" v-model="title" aria-describedby="title-help"/>
-            <small id="title-help">Enter your username to reset your password.</small>
           </div>
           <div class="flex flex-col gap-2">
-            <label for="username">Username</label>
-            <VInputText id="username" v-model="name" aria-describedby="username-help"/>
-            <small id="username-help">Enter your username to reset your password.</small>
+            <label for="body">Body</label>
+            <quill-editor content-type="html" v-model:content="body" theme="snow"></quill-editor>
+          </div>
+          <div class="flex flex-col">
+            <VFileUpload ref="fileupload" mode="advanced" name="file" url="/api/upload" accept="image/*" :maxFileSize="1000000" />
           </div>
           <v-button type="submit">Add Product</v-button>
         </form>

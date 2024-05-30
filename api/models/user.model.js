@@ -17,6 +17,11 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
+    likedProducts: {
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: "Product",
+        default: [],
+    },
     cart: [
         {
             productId: {

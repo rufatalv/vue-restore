@@ -21,7 +21,13 @@
       }"
     >
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 container my-10 gap-4">
-        <UICard v-for="item in items" :key="item.id" :item="item" @click="addToCart(item)"/>
+        <UICard
+            v-for="item in items"
+            :key="item.id"
+            :btnText="store.items.find((storeItem) => storeItem.id === item.id) ? 'Added to Cart' : 'Add to Cart'"
+            :item="item"
+            @click="addToCart(item)"
+        />
       </div>
     </div>
   </div>
@@ -34,27 +40,45 @@ import axios from 'axios'
 import {useCart} from '@/store/store.js'
 import UICard from '@/components/UICard.vue'
 import UILoader from "@/components/UILoader.vue";
+import {toast} from "@steveyuowo/vue-hot-toast";
 
 const items = ref([])
 const store = useCart()
 const isLoading = ref(true)
 
-const fetchData = async () => {
+const addedItems = ref([]) // Track added items
 
+const fetchData = async () => {
   const response = await axios.get(import.meta.env.VITE_API_URL + '/api/products')
   items.value = response.data
   isLoading.value = false
 }
 
 const addToCart = (item) => {
-  store.addToCart({
-    id: item.id,
-    title: item.title,
-    price: item.price,
-    image: item.image,
-    category: item.category
-  })
-}
+  const toastCart = toast.loading("Loading...")
 
+  const isExists = store.items.find((storeItem) => storeItem.id === item.id);
+  if (isExists) {
+    toast.update(toastCart, {
+      type: "success",
+      message: "Item removed from cart!"
+    })
+
+    store.removeItem(item.id)
+  } else {
+    toast.update(toastCart, {
+      type: "success",
+      message: "Item added to cart!"
+    })
+    store.addToCart({
+      id: item.id,
+      title: item.title,
+      price: item.price,
+      image: item.image,
+      category: item.category
+    })
+  }
+
+}
 fetchData()
 </script>

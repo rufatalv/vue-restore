@@ -1,6 +1,6 @@
 import './assets/main.css'
 import 'primeicons/primeicons.css'
-
+import '@vueup/vue-quill/dist/vue-quill.snow.css';
 import {createApp} from 'vue'
 import App from './App.vue'
 import PrimeVue from 'primevue/config'
@@ -25,6 +25,8 @@ import Drawer from "primevue/drawer";
 import DataView from "primevue/dataview";
 import Tag from "primevue/tag";
 import Menu from "primevue/menu";
+import {QuillEditor} from "@vueup/vue-quill";
+import FileUpload from "primevue/fileupload";
 
 
 const pinia = createPinia()
@@ -100,8 +102,11 @@ app.component('VMenu', Menu)
 app.component('VButton', Button)
 app.component('VDataView', DataView)
 app.component('VTag', Tag)
+app.component('VFileUpload', FileUpload)
+app.component('QuillEditor', QuillEditor)
 app.directive('ripple', Ripple)
 app.use(router)
 app.use(pinia)
 app.use(MotionPlugin)
+
 app.mount('#app')

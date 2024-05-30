@@ -1,7 +1,7 @@
 <template>
   <div class="container mt-10 min-h-[500px]">
     <div v-if="loading">
-      <UILoader />
+      <UILoader/>
     </div>
     <div v-else>
       <VCard>
@@ -22,7 +22,9 @@
               <VInputText v-model="password" placeholder="Password" type="password"/>
             </VInputGroup>
             <VButton class="w-full" label="Login" type="submit"/>
-            <p class="text-zinc-400">Don't have an account? <RouterLink class="text-zinc-900" to="/auth/register">Sign Up!</RouterLink></p>
+            <p class="text-zinc-400">Don't have an account?
+              <RouterLink class="text-zinc-900" to="/auth/register">Sign Up!</RouterLink>
+            </p>
           </form>
         </template>
       </VCard>
@@ -43,6 +45,7 @@ const loading = ref(false);
 const login = ref(null);
 const password = ref(null);
 const store = useUser();
+
 const handleSubmit = async (e) => {
   e.preventDefault();
   loading.value = true;
@@ -55,8 +58,6 @@ const handleSubmit = async (e) => {
     await router.push('/');
     loading.value = false;
     toast.success('Logged in successfully!')
-    window.location.reload()
-
   }
 }
 </script>

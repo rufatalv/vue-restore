@@ -12,8 +12,11 @@
   },
   "dependencies": {
     "@steveyuowo/vue-hot-toast": "^1.2.5",
+    "@vueup/vue-quill": "^1.2.0",
     "@vueuse/motion": "^2.1.0",
     "axios": "^1.7.2",
+    "js-cookie": "^3.0.5",
+    "jsonwebtoken": "^9.0.2",
     "jwt-decode": "^4.0.0",
     "pinia": "^2.1.7",
     "primeicons": "^7.0.0",
