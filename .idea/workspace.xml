@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="79b0f637-49de-47e0-b20d-abd711930002" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/UINavbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/UINavbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/LoginView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/LoginView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +37,9 @@
     &quot;accountId&quot;: &quot;4bd643f8-5c90-4b3f-90ea-7a36eb66fe2e&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -103,7 +109,8 @@
       <workItem from="1716970498970" duration="2039000" />
       <workItem from="1717002862570" duration="3994000" />
       <workItem from="1717011179396" duration="12104000" />
-      <workItem from="1717065393991" duration="1286000" />
+      <workItem from="1717065393991" duration="2914000" />
+      <workItem from="1717080854201" duration="604000" />
     </task>
     <servers />
   </component>

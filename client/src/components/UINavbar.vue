@@ -35,25 +35,28 @@
           <VButton aria-controls="overlay_menu" aria-haspopup="true" class="h-[38px]" icon="pi pi-ellipsis-v"
                    type="button"
                    @click="toggle"/>
-          <VMenu id="overlay_menu" ref="menu" :model="menuItemsWithAdmin" :popup="true" :pt="{
+          <div v-if="user.user">
+            <VMenu id="overlay_menu" ref="menu" :model="menuItemsWithAdmin" :popup="true" :pt="{
             root: '!top-14 !right-0'
           }" class="w-[140px] ">
-            <template #submenuitem="{ item }">
-              <span class="text-zinc-900 text-sm font-semibold">{{ item.label }}</span>
-            </template>
-            <template #item="{ item, props }">
-              <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
-                <a v-ripple :href="href" v-bind="props.action" @click="navigate">
+              <template #submenuitem="{ item }">
+                <span class="text-zinc-900 text-sm font-semibold">{{ item.label }}</span>
+              </template>
+              <template #item="{ item, props }">
+                <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
+                  <a v-ripple :href="href" v-bind="props.action" @click="navigate">
+                    <span :class="item.icon"/>
+                    <span class="ml-2 font-medium text-sm">{{ item.label }}</span>
+                  </a>
+                </router-link>
+                <a v-else v-ripple :href="item.url" :target="item.target" v-bind="props.action">
                   <span :class="item.icon"/>
                   <span class="ml-2 font-medium text-sm">{{ item.label }}</span>
                 </a>
-              </router-link>
-              <a v-else v-ripple :href="item.url" :target="item.target" v-bind="props.action">
-                <span :class="item.icon"/>
-                <span class="ml-2 font-medium text-sm">{{ item.label }}</span>
-              </a>
-            </template>
-          </VMenu>
+              </template>
+            </VMenu>
+          </div>
+
         </div>
       </div>
 
@@ -79,12 +82,13 @@ const menu = ref();
 const toggle = (event) => {
   menu.value.toggle(event);
 };
+const username = user.user ? user.user.username : 'Guest';
 const menuItems = ref([
   {
     label: 'Profile',
     items: [
       {
-        label: user.user?.username,
+        label: username,
         icon: 'pi pi-user',
         route: '/#'
       },

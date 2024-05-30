@@ -55,6 +55,8 @@ const handleSubmit = async (e) => {
     await router.push('/');
     loading.value = false;
     toast.success('Logged in successfully!')
+    window.location.reload()
+
   }
 }
 </script>
