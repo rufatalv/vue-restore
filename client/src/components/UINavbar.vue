@@ -84,7 +84,7 @@ const menuItems = ref([
     label: 'Profile',
     items: [
       {
-        label: user.user.username,
+        label: user.user?.username,
         icon: 'pi pi-user',
         route: '/#'
       },
