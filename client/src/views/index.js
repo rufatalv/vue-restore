@@ -45,6 +45,8 @@ router.beforeEach((to, from, next) => {
     } else if (to.path === '/logout' && user.user?.token) {
         user.logout()
         next('/')
+    } else if(to.path.startsWith("/admin") && user.user?.role !== 'admin'){
+        next('/')
     } else {
         next()
     }

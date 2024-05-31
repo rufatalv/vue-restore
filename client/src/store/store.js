@@ -1,6 +1,7 @@
 import {defineStore} from 'pinia'
 import {jwtDecode} from 'jwt-decode'
-
+import axios from "axios";
+import {toast} from "@steveyuowo/vue-hot-toast";
 
 export const useCart = defineStore('cart', {
     state: () => ({
@@ -58,17 +59,12 @@ export const useUser = defineStore('user', {
     }),
     getters: {
         isLoggedIn() {
-            return this.user && this.isTokenValid(this.user.token);
-            // const {user} = this;
-            // console.log(user)
-            // if (!user || !user.token) return false;
-            //
-            // if (!this.isTokenValid(user.token)) {
-            //     this.logout();
-            //     return false;
-            // }
-            //
-            // return true;
+            if(this.user && this.isTokenValid(this.user.token)){
+                return true;
+            } else{
+                this.logout()
+                return false;
+            }
         }
     },
     actions: {
@@ -78,6 +74,43 @@ export const useUser = defineStore('user', {
         setUser(payload) {
             this.user = payload;
             this.persistToLocalStorage();
+        },
+        async addLikedProduct(payload) {
+            const like = toast.loading('Loading...')
+            try {
+                const response = await axios.post(import.meta.env.VITE_API_URL + "/api/products/add-to-fav/" + payload).then((res) => {
+                    toast.update(like, {
+                        type: "success",
+                        message: "Item added to favorites!"
+                    })
+                    return res
+                });
+                console.log(response.data);
+
+                this.user.likedProducts = response.data.likedProducts;
+                this.persistToLocalStorage();
+            } catch (error) {
+                console.error('Error updating liked products to backend:', error);
+            }
+
+        },
+        async removeLikedProduct(payload) {
+            const like = toast.loading('Loading...')
+
+            try {
+                const response = await axios.delete(import.meta.env.VITE_API_URL + "/api/products/add-to-fav/" + payload).then((res) => {
+                    toast.update(like, {
+                        type: "success",
+                        message: "Item removed from favorites!"
+                    })
+                    return res
+                });
+                console.log(response.data);
+                this.user.likedProducts = response.data.likedProducts;
+                this.persistToLocalStorage();
+            } catch (error) {
+                console.error('Error updating liked products to backend:', error);
+            }
         },
         logout() {
             this.user = null;

@@ -25,8 +25,9 @@
             v-for="item in items"
             :key="item.id"
             :btnText="store.items.find((storeItem) => storeItem.id === item.id) ? 'Added to Cart' : 'Add to Cart'"
+            :btnclick="() => addToCart(item)"
+            :click-heart="() => handleAddToFavorites(item)"
             :item="item"
-            @click="addToCart(item)"
         />
       </div>
     </div>
@@ -35,9 +36,9 @@
 
 
 <script setup>
-import {ref} from 'vue'
+import {computed, ref} from 'vue'
 import axios from 'axios'
-import {useCart} from '@/store/store.js'
+import {useCart, useUser} from '@/store/store.js'
 import UICard from '@/components/UICard.vue'
 import UILoader from "@/components/UILoader.vue";
 import {toast} from "@steveyuowo/vue-hot-toast";
@@ -45,8 +46,19 @@ import {toast} from "@steveyuowo/vue-hot-toast";
 const items = ref([])
 const store = useCart()
 const isLoading = ref(true)
+const user = useUser()
 
-const addedItems = ref([]) // Track added items
+const handleAddToFavorites = (item) => {
+  let isExists = computed(() => {
+    return user.user?.likedProducts.filter((product) => product._id === item._id).length > 0
+  })
+  if (isExists.value) {
+    console.log(item)
+    user.removeLikedProduct(item._id)
+  } else {
+    user.addLikedProduct(item._id)
+  }
+}
 
 const fetchData = async () => {
   const response = await axios.get(import.meta.env.VITE_API_URL + '/api/products')
