@@ -40,7 +40,9 @@ export const getAllProducts = async (req, res, next) => {
 };
 export const getSingleProduct = async (req, res, next) => {
     try {
-        const product = await Product.findById(req.params.id);
+        const product = await Product
+        .findById(req.params.id)
+        .populate('category')
 
         if (product) {
             return res.status(200).json(product);
@@ -94,12 +96,12 @@ export const addProduct = async (req, res, next) => {
         });
 
         await newProduct.save();
+        // todo new filter
+        // const updatedCategory = await Category.findByIdAndUpdate(category, {
+        //     $push: { products: newProduct._id }
+        // }, { new: true });
 
-        const updatedCategory = await Category.findByIdAndUpdate(category, {
-            $push: { products: newProduct._id }
-        }, { new: true });
-
-        await updatedCategory.save();
+        // await updatedCategory.save();
 
         res.send("Product added successfully");
     } catch (error) {

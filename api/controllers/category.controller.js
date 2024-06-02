@@ -1,4 +1,5 @@
 import Category from "../models/category.model.js";
+import Product from "../models/product.model.js";
 
 export const getAllCategories = async (req, res, next) => {
     const categories = await Category.find().populate("products")
@@ -49,5 +50,18 @@ export const deleteCategory = async (req, res, next) => {
         res.status(200).json("Category deleted successfully!");
     } catch (error) {
         next(error);
+    }
+}
+
+export const getProductsByCategory = async (req, res, next) => {
+    try {
+        const categoryId = await req.params.categoryId;
+        const products = await Product.find({ 'category': categoryId }).populate('category');
+        console.log("Products:", products);
+        console.log(categoryId)
+        res.status(200).send(products);
+    } catch (error) {
+        console.error("Error:", error);
+        next(error); 
     }
 }
